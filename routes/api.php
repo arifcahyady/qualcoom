@@ -21,10 +21,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //------------------------------------
 //			NASABAH AUTH
 //-------------------------------------
+Route::group(['middleware' => 'CheckRoleApi:nasabah'], function() {
 Route::post('auth/login', 'Api\AuthController@login');
 Route::post('auth/register', 'Api\AuthController@register');
 Route::post('auth/logout', 'Api\AuthController@logout')->middleware('auth:api');
 Route::post('forgot_password', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+});
 
 Route::group(['middleware' => ['auth:api','CheckRoleApi:nasabah']], function() {
 	Route::patch('/update/profile', 'Api\AuthController@update');
