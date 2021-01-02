@@ -9,10 +9,10 @@
     <div class="image"></div>
     <div class="title">
         <div class="big-title">
-            Qualc<font color="red">oo</font>m Academic
+            Qualc<font color="red">oo</font>m Litter
         </div>
         <div class="small-title">
-            Make your simple learning
+            create a wonderful world with only one litter
         </div>
     </div>
     <div>
