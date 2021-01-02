@@ -49,8 +49,23 @@ class DashboardController extends Controller
 
             if ($request->hasFile('image')) {
             
-            $request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
-            $user->image = $request->file('image')->getClientOriginalName();
+            $image = base64_encode(file_get_contents($request->file('image')));
+
+            $client = new \GuzzleHttp\Client();
+
+            $response = $client->request('POST', 'https://freeimage.host/api/1/upload', [
+                    'form_params' => [
+                        'key' => '6d207e02198a847aa98d0a2a901485a5',
+                        'action' => 'upload',
+                        'source' => $image,
+                        'format' => 'json'
+                      ]
+            ], 200);
+            $body = $response->getBody();
+            $response = json_decode($body);
+            $image = $response->image->display_url;
+
+            $user->image = $image;
             
         }
         $user->save();
@@ -74,8 +89,23 @@ class DashboardController extends Controller
 
         if ($request->hasFile('image')) {
             
-            $request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
-            $user->image = $request->file('image')->getClientOriginalName();
+             $image = base64_encode(file_get_contents($request->file('image')));
+
+            $client = new \GuzzleHttp\Client();
+
+            $response = $client->request('POST', 'https://freeimage.host/api/1/upload', [
+                    'form_params' => [
+                        'key' => '6d207e02198a847aa98d0a2a901485a5',
+                        'action' => 'upload',
+                        'source' => $image,
+                        'format' => 'json'
+                      ]
+            ], 200);
+            $body = $response->getBody();
+            $response = json_decode($body);
+            $image = $response->image->display_url;
+
+            $user->image = $image;
         }
 
         $user->update();
