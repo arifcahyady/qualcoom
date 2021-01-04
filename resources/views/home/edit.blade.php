@@ -30,6 +30,7 @@
 		      <option value="bendahara" @if($user->role == 'bendahara') selected @endif>Bendahara</option>
 		      <option value="pengurus1" @if($user->role == 'pengurus1') selected @endif>Pengurus 1</option>
 		      <option value="pengurus2" @if($user->role == 'pengurus2') selected @endif>Pengurus 2</option>
+		       <option value="admin" @if($user->role == 'admin') selected @endif>Admin</option>
 		    </select>
 		  </div>
 
