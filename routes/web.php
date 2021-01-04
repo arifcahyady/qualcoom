@@ -36,6 +36,8 @@ Route::group(['middleware' => ['auth','CheckRole:admin']], function() {
 	Route::get('/pengurus/{id}/delete', 'Web\DashboardController@deletePengurus');
 	Route::get('sampah', 'Web\TrashController@index');
 	Route::post('sampah/create', 'Web\TrashController@create');
+	Route::get('/sampah/{id}/update', 'Web\TrashController@update');
+	Route::post('/sampah/{id}/edit', 'Web\TrashController@edit');
 });
 Auth::routes();
 

@@ -28,4 +28,21 @@ class TrashController extends Controller
 
     	return redirect('sampah');
     }
+
+    public function update($id)
+    {
+        $trash = Sampah::where('id', $id)->first();
+
+        return view('trash.edit', compact('trash'));
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $trash = Sampah::where('id', $id)->first();
+        $trash->jenis_sampah = $request->jenis_sampah;
+        $trash->harga = $request->harga;
+        $trash->save();
+
+        return redirect('sampah');
+    }
 }
