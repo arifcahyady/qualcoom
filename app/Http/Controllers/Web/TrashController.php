@@ -45,4 +45,12 @@ class TrashController extends Controller
 
         return redirect('sampah');
     }
+
+    public function delete($id)
+    {
+        $trash = Sampah::where('id', $id);
+        $trash->delete();
+
+        return redirect('sampah');
+    }
 }

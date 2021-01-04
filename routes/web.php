@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth','CheckRole:admin']], function() {
 	Route::post('sampah/create', 'Web\TrashController@create');
 	Route::get('/sampah/{id}/update', 'Web\TrashController@update');
 	Route::post('/sampah/{id}/edit', 'Web\TrashController@edit');
+	Route::get('sampah/{id}/delete', 'Web\TrashController@delete');
 });
 Auth::routes();
 
