@@ -28,7 +28,7 @@ class AuthController extends Controller
 
      public function registerasi()
     {
-    	return view('auth.registerasi');
+    	return view('auth.register');
     }
 
     public function postregister(Request $request)

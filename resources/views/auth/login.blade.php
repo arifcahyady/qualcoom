@@ -31,7 +31,7 @@
                         <div class="content">
                             <div class="header">
                                 <div class="logo text-center"><img src="{{asset('/admin/assets/img/Bookstore.png')}}" alt="Klorofil Logo"></div>
-                                <p class="lead" style="color: white;">Register your account</p>
+                                <p class="lead" style="color: white;">Login your account</p>
                             </div>
                             <form class="form-auth-small" action="/postlogin" method="post">
                                 @csrf
@@ -45,7 +45,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                             </form>
-                            <div style="margin-top: 30px; color: white;">Dont have a account ? <a href="register">click here</a></div>
+                            <div style="margin-top: 30px; color: white;">Dont have a account ? <a href="registrasi">click here</a></div>
                         </div>
                     </div>
                     <div class="right">
