@@ -104,7 +104,7 @@ class DashboardController extends Controller
             $body = $response->getBody();
             $response = json_decode($body);
             $image = $response->image->display_url;
-
+            dd($image);
             $user->image = $image;
         }
 
