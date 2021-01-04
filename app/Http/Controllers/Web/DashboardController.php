@@ -108,7 +108,7 @@ class DashboardController extends Controller
             $user->image = $image;
         }
 
-        $user->update();
+        $user->save();
 
         return redirect('/dashboard')->with('sukses', 'Data berhasil di update');
     }
