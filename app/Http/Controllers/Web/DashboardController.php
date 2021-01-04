@@ -47,27 +47,12 @@ class DashboardController extends Controller
             $user->nomor_telepon = $request->nomor_telepon;
             $user->alamat = $request->alamat;
 
-            if ($request->hasFile('image')) {
             
-            $image = base64_encode(file_get_contents($request->file('image')));
-
-            $client = new \GuzzleHttp\Client();
-
-            $response = $client->request('POST', 'https://freeimage.host/api/1/upload', [
-                    'form_params' => [
-                        'key' => '6d207e02198a847aa98d0a2a901485a5',
-                        'action' => 'upload',
-                        'source' => $image,
-                        'format' => 'json'
-                      ]
-            ], 200);
-            $body = $response->getBody();
-            $response = json_decode($body);
-            $image = $response->image->display_url;
-
-            $user->image = $image;
-            
+        if ($request->hasFile('image')) {
+             $request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+            $user->image = $request->file('image')->getClientOriginalName();
         }
+        
         $user->save();
         return redirect('/dashboard')->with('sukses', 'Data berhasil di tambahkan');
     }
@@ -88,24 +73,8 @@ class DashboardController extends Controller
         $user->alamat = $request->alamat;
 
         if ($request->hasFile('image')) {
-            
-             $image = base64_encode(file_get_contents($request->file('image')));
-
-            $client = new \GuzzleHttp\Client();
-
-            $response = $client->request('POST', 'https://freeimage.host/api/1/upload', [
-                    'form_params' => [
-                        'key' => '6d207e02198a847aa98d0a2a901485a5',
-                        'action' => 'upload',
-                        'source' => $image,
-                        'format' => 'json'
-                      ]
-            ], 200);
-            $body = $response->getBody();
-            $response = json_decode($body);
-            $image = $response->image->display_url;
-            dd($image);
-            $user->image = $image;
+             $request->file('image')->move('images/', $request->file('image')->getClientOriginalName());
+            $user->image = $request->file('image')->getClientOriginalName();
         }
 
         $user->save();
