@@ -15,8 +15,13 @@ class Pengurus1Controller extends Controller
     public function index()
     {
     	$user = User::where('role', 'nasabah')->get();
-    }
+    
 
+    	return response()->json([
+    		'status' => 'success',
+    		'data' => $user
+    	]);
+	}
     public function create(Request $request,$id)
     {
     	$baru = Sampah::where('id', $request->jenis_sampah_id)->first();
