@@ -23,7 +23,7 @@ class Pengurus1Controller extends Controller
 
     	$pengurus = new Pengurus1;
     	$pengurus->jenis_sampah_id = $request->jenis_sampah_id;
-    	$pengurus->date = Carbon::now();
+    	$pengurus->tanggal = Carbon::now();
     	$pengurus->keterangan = $request->keterangan;
     	$pengurus->jenis_sampah = $baru->jenis_sampah;
     	$pengurus->berat = $request->berat;
