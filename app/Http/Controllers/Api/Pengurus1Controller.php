@@ -13,7 +13,7 @@ class Pengurus1Controller extends Controller
 {
     public function create(Request $request)
     {
-    	$baru = Sampah::where('id', $request->jenis_sampah_id)->get();
+    	$baru = Sampah::where('id', $request->jenis_sampah_id)->first();
 
     	$request->validate([
     		'jenis_sampah_id' => 'required',
