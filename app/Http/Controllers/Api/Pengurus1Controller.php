@@ -33,6 +33,7 @@ class Pengurus1Controller extends Controller
     	}else {
     		$pengurus->harga_satuan = $baru->harga * 20 / 100;
     	}
+    	dd($pengurus);
     	$pengurus->save();
 
     	$tabungan = new Tabungan;
