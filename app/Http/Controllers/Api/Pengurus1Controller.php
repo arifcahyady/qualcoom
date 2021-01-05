@@ -42,8 +42,8 @@ class Pengurus1Controller extends Controller
 
     	return response()->json([
     		'status' => 'success',
-    		'data' => $pengurus
-    		// 'tabungan' => $tabungan
+    		'data' => $pengurus,
+    		'tabungan' => $tabungan
     	]);
     }
 }
