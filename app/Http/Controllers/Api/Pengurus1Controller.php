@@ -13,7 +13,7 @@ class Pengurus1Controller extends Controller
 {
     public function create(Request $request)
     {
-    	$baru = Sampah::where('id', $request->jenis_sampah_id)->first();
+    	$baru = Sampah::where('id', $request->jenis_sampah_id)->get();
 
     	$request->validate([
     		'jenis_sampah_id' => 'required',
@@ -33,7 +33,7 @@ class Pengurus1Controller extends Controller
     	}else {
     		$pengurus->harga_satuan = $baru->harga * 20 / 100;
     	}
-    	dd($pengurus);
+    	// dd($pengurus);
     	$pengurus->save();
 
     	$tabungan = new Tabungan;
