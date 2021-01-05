@@ -9,6 +9,6 @@ class Tabungan extends Model
 {
     protected $table = 'tabungan';
 
-    protected $fillable = ['debit','kredit','saldo'];
+    protected $fillable = ['debit','kredit','saldo','user_id'];
 
 }

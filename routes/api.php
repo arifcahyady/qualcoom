@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth:api','CheckRoleApi:nasabah']], function() {
 });
 
 Route::group(['middleware' => ['auth:api','CheckRoleApi:pengurus1']], function() {
-	Route::post('/pengurus1/setoran','Api\Pengurus1Controller@create');
+	Route::post('/pengurus1/setoran/{id}','Api\Pengurus1Controller@create');
 });
 
 

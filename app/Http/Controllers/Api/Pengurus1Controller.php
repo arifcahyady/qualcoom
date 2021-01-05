@@ -8,10 +8,16 @@ use App\Model\Sampah;
 use App\Models\Pengurus1;
 use App\Models\Tabungan;
 use Carbon\Carbon;
+use App\User;
 
 class Pengurus1Controller extends Controller
 {
-    public function create(Request $request)
+    public function index()
+    {
+    	$user = User::where('role', 'nasabah')->get();
+    }
+
+    public function create(Request $request,$id)
     {
     	$baru = Sampah::where('id', $request->jenis_sampah_id)->first();
 
@@ -37,6 +43,7 @@ class Pengurus1Controller extends Controller
     	$pengurus->save();
 
     	$tabungan = new Tabungan;
+    	$tabungan->user_id = $id;
     	$tabungan->debit = $pengurus->harga_satuan * $pengurus->berat;
     	$tabungan->save();
 
