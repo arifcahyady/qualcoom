@@ -31,7 +31,9 @@ Route::group(['middleware' => ['auth:api','CheckRoleApi:nasabah']], function() {
 	Route::get('/profile', 'Api\AuthController@index');
 });
 
-
+Route::group(['middleware' => ['auth:api','CheckRoleApi:pengurus1']], function() {
+	Route::post('/pengurus1/setoran','Api\Pengurus1Controller@create');
+});
 
 
 
