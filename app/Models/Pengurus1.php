@@ -13,6 +13,6 @@ class Pengurus1 extends Model
 
     public function JenisSampah()
     {
-    	return $this->hasOne(Sampah::class);
+    	return $this->belongsTo(Sampah::class);
     }
 }
