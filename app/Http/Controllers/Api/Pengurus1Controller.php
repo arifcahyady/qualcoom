@@ -37,8 +37,8 @@ class Pengurus1Controller extends Controller
     	$pengurus->save();
 
     	$tabungan = new Tabungan;
-
     	$tabungan->debit = $pengurus->harga_satuan * $pengurus->berat;
+    	$tabungan->save();
 
     	return response()->json([
     		'status' => 'success',

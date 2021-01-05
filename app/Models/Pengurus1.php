@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Model\Sampah;
+use App\Models\Tabungan;
 
 class Pengurus1 extends Model
 {
