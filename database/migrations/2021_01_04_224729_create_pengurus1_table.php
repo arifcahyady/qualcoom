@@ -16,7 +16,7 @@ class CreatePengurus1Table extends Migration
         Schema::create('pengurus1', function (Blueprint $table) {
             $table->id();
             $table->integer('jenis_sampah_id');
-            $table->date('tanggal');
+            $table->string('tanggal');
             $table->string('keterangan')->nullable();
             $table->string('jenis_sampah');
             $table->string('harga_satuan');
