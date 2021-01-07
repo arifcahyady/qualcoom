@@ -7,7 +7,7 @@ use App\Model\Sampah;
 
 class Pengurus2 extends Model
 {
-    protected $table = 'Pengurus2';
+    protected $table = 'pengurus2';
 
     protected $fillable = ['jenis_sampah_id','tanggal','nama','phone','jenis_sampah','harga_satuan','berat'];
 
