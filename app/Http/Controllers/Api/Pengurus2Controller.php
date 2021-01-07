@@ -27,7 +27,7 @@ class Pengurus2Controller extends Controller
     	$pengurus->tanggal = Carbon::now();
     	$pengurus->nama = $request->nama;
     	$pengurus->phone = $request->phone;
-    	$pengurus->jenis_sampah = $data->jenis_Sampah;
+    	$pengurus->jenis_sampah = $data->jenis_sampah;
     	$pengurus->harga_satuan = $data->harga;
     	$pengurus->berat = $request->berat;
 
